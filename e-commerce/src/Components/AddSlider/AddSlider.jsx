@@ -20,17 +20,17 @@ import "./AddSlider.css";
 
 const AddSlider = () => {
   const slides = [
-    { id: 1, title: "Samsung 55-inch 4K Smart TV", subtitle: "Dashain Tihar Offer", price: "₹45,000.00", image: adv1 },
-    { id: 2, title: "Nike Air Max Shoes - Black", subtitle: "Dashain Tihar Offer", price: "₹8,500.00", image: adv3 },
-    { id: 3, title: "Levi's Slim Fit Jeans - Blue", subtitle: "Dashain Tihar Offer", price: "₹3,200.00", image: adv8 },
-    { id: 4, title: "Sony Wireless Headphones", subtitle: "Dashain Tihar Offer", price: "₹12,000.00", image: headphone },
-    { id: 5, title: "Ray-Ban Aviator Sunglasses", subtitle: "Dashain Tihar Offer", price: "₹9,800.00", image: adv44 },
-    { id: 6, title: "KitchenAid Stand Mixer - Red", subtitle: "Dashain Tihar Offer", price: "₹25,000.00", image: adv5 },
-    { id: 7, title: "Adidas Sports Backpack", subtitle: "Dashain Tihar Offer", price: "₹4,500.00", image: addidasback },
-    { id: 8, title: "Dyson V10 Vacuum Cleaner", subtitle: "Dashain Tihar Offer", price: "₹35,000.00", image: adv6 },
-    { id: 9, title: "Tissot Gentleman Watch", subtitle: "Dashain Tihar Offer", price: "₹18,000.00", image: whatch },
-    { id: 10, title: "Philips Air Fryer - 4.5L", subtitle: "Dashain Tihar Offer", price: "₹7,500.00", image: airbods },
-  ];
+  { id: 1, title: "सैमसङ ५५-इन्च ४के स्मार्ट टिभी", subtitle: "दशैँ तिहार अफर", price: "रु ४५,०००", image: adv1 },
+  { id: 2, title: "नाइके एयर म्याक्स जुत्ता - कालो", subtitle: "दशैँ तिहार अफर", price: "रु ८,५००", image: adv3 },
+  { id: 3, title: "लेभीस स्लिम फिट जिन्स - नीलो", subtitle: "दशैँ तिहार अफर", price: "रु ३,२००", image: adv8 },
+  { id: 4, title: "सोनी वायरलेस हेडफोन", subtitle: "दशैँ तिहार अफर", price: "रु १२,०००", image: headphone },
+  { id: 5, title: "रे-ब्यान अविएटर सनग्लासेस", subtitle: "दशैँ तिहार अफर", price: "रु ९,८००", image: adv44 },
+  { id: 6, title: "किचनएड स्ट्यान्ड मिक्सर - रातो", subtitle: "दशैँ तिहार अफर", price: "रु २५,०००", image: adv5 },
+  { id: 7, title: "एडिडास स्पोर्ट्स ब्याकप्याक", subtitle: "दशैँ तिहार अफर", price: "रु ४,५००", image: addidasback },
+  { id: 8, title: "डाइसोन V10 भ्याकुम क्लिनर", subtitle: "दशैँ तिहार अफर", price: "रु ३५,०००", image: adv6 },
+  { id: 9, title: "टिसोट जेन्टलम्यान घडी", subtitle: "दशैँ तिहार अफर", price: "रु १८,०००", image: whatch },
+  { id: 10, title: "फिलिप्स एयर फ्रायर - ४.५ लिटर", subtitle: "दशैँ तिहार अफर", price: "रु ७,५००", image: airbods },
+];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -65,8 +65,8 @@ const AddSlider = () => {
       <div className="ads">
         <div className="ad-card blue">
           <div>
-            <h3>Buy Men's Footwear with low price</h3>
-            <p className="price">₹1500</p>
+            <h3>पुरुषको जुत्ता कम मूल्यमा किन्नुहोस्</h3>
+            <p className="price">रू १,५००</p>
             <button className="link-btn">Shop Now</button>
           </div>
           <img src={shoes} alt="Footwear" />
@@ -74,8 +74,8 @@ const AddSlider = () => {
 
         <div className="ad-card green">
           <div>
-            <h3>Buy Apple iPhone</h3>
-            <p className="price">₹75,000</p>
+            <h3>एप्पल आइफोन किन्नुहोस्</h3>
+            <p className="price">रू ७५,०००</p>
             <button className="link-btn">Shop Now</button>
           </div>
           <img src={iphone} alt="iPhone" />

@@ -67,12 +67,10 @@ const Header = () => {
               <ul>
                 <li>
                   <Link to="/login" className="nav-link">
-                    Login
-                  </Link>{" "}
+लगइन                  </Link>{" "}
                   |{" "}
                   <Link to="/register" className="nav-link">
-                    Register
-                  </Link>
+दर्ता गर्नुहोस्                  </Link>
                 </li>
 
                 {/* Cart */}

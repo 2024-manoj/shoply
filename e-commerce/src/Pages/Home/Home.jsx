@@ -5,6 +5,7 @@ import { PiVanLight } from "react-icons/pi";
 import AddSlider from "../../Components/AddSlider/AddSlider";
 import ProductItem from "../../Components/ProductsItem/ProductItem";
 import Blog from "../../Components/Blog/Blog";
+import Features from "../../Components/Features/Features";
 // import adv1 from '../../assets/images/adv1.jpg'
 // import adv2 from '../../assets/images/adv2.jpg'
 // import adv3 from '../../assets/images/adv3.jpg'
@@ -49,6 +50,7 @@ const Home = () => {
             <br />
 
             < Blog />
+            <Features />
 
 
 

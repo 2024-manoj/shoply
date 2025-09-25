@@ -12,337 +12,719 @@ import "./Blog.css";
 const Blog = () => {
   const [visiblePost, setVisiblePost] = useState(4);
   const posts = [
-    {
-      id: 1,
-      title: "Top 10 Must-Have Outfits for Summer 2025",
-      excerpt:
-        "Discover the essential summer wardrobe that will keep you stylish and comfortable in the heat.",
-      author: "Manoj Katuwal",
-      date: "June 15, 2025",
-      // image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Fashion",
-      image: post1,
-    },
-    {
-      id: 2,
-      title: "Laptop Buying Guide: Best Laptops Under $1000",
-      excerpt:
-        "Find the perfect laptop that fits your budget without compromising on performance and style.",
-      author: "Ketan Katuwal",
-      date: "May 28, 2025",
-      // image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Electronics",
-      image: post2,
-    },
-    {
-      id: 3,
-      title: "Gift Ideas for Valentine's Day – 2025 Edition",
-      excerpt:
-        "Thoughtful and unique gift ideas that will impress your loved ones this Valentine's Day.",
-      author: "Nawraj Bhandari",
-      date: "Jan 22, 2025",
-      // image: "https://images.unsplash.com/photo-1519415711931-702deacf5be2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Lifestyle",
-      image: post3,
-    },
-    {
-      id: 4,
-      title: "How Our Products Are Made Sustainably",
-      excerpt:
-        "Learn about our commitment to sustainability and ethical manufacturing processes.",
-      author: "Nischal Shrestha",
-      date: "Apr 12, 2025",
-      // image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Sustainability",
-      image: post4,
-    },
-    {
-      id: 5,
-      title: "5 Ways to Style Your Denim Jacket",
-      excerpt:
-        "Transform your classic denim jacket into versatile outfits for any occasion.",
-      author: "Jiwan Karki",
-      date: "Mar 5, 2025",
-      // image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Fashion",
-      image: post5,
-    },
-    {
-      id: 6,
-      title: "2025 Home Decor Trends You Need to Know",
-      excerpt:
-        "Refresh your living space with the latest home decor trends of 2025.",
-      author: "Sujal Rai",
-      date: "Feb 18, 2025",
-      // image: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Home & Living",
-      image: post6,
-    },
-    {
-      id: 1,
-      title: "Top 10 Must-Have Outfits for Summer 2025",
-      excerpt:
-        "Discover the essential summer wardrobe that will keep you stylish and comfortable in the heat.",
-      author: "Manoj Katuwal",
-      date: "June 15, 2025",
-      // image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Fashion",
-      image: post1,
-    },
-    {
-      id: 2,
-      title: "Laptop Buying Guide: Best Laptops Under $1000",
-      excerpt:
-        "Find the perfect laptop that fits your budget without compromising on performance and style.",
-      author: "Ketan Katuwal",
-      date: "May 28, 2025",
-      // image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Electronics",
-      image: post2,
-    },
-    {
-      id: 3,
-      title: "Gift Ideas for Valentine's Day – 2025 Edition",
-      excerpt:
-        "Thoughtful and unique gift ideas that will impress your loved ones this Valentine's Day.",
-      author: "Nawraj Bhandari",
-      date: "Jan 22, 2025",
-      // image: "https://images.unsplash.com/photo-1519415711931-702deacf5be2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Lifestyle",
-      image: post3,
-    },
-    {
-      id: 4,
-      title: "How Our Products Are Made Sustainably",
-      excerpt:
-        "Learn about our commitment to sustainability and ethical manufacturing processes.",
-      author: "Nischal Shrestha",
-      date: "Apr 12, 2025",
-      // image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Sustainability",
-      image: post4,
-    },
-    {
-      id: 5,
-      title: "5 Ways to Style Your Denim Jacket",
-      excerpt:
-        "Transform your classic denim jacket into versatile outfits for any occasion.",
-      author: "Jiwan Karki",
-      date: "Mar 5, 2025",
-      // image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Fashion",
-      image: post5,
-    },
-    {
-      id: 6,
-      title: "2025 Home Decor Trends You Need to Know",
-      excerpt:
-        "Refresh your living space with the latest home decor trends of 2025.",
-      author: "Sujal Rai",
-      date: "Feb 18, 2025",
-      // image: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Home & Living",
-      image: post6,
-    },
-    {
-      id: 1,
-      title: "Top 10 Must-Have Outfits for Summer 2025",
-      excerpt:
-        "Discover the essential summer wardrobe that will keep you stylish and comfortable in the heat.",
-      author: "Manoj Katuwal",
-      date: "June 15, 2025",
-      // image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Fashion",
-      image: post1,
-    },
-    {
-      id: 2,
-      title: "Laptop Buying Guide: Best Laptops Under $1000",
-      excerpt:
-        "Find the perfect laptop that fits your budget without compromising on performance and style.",
-      author: "Ketan Katuwal",
-      date: "May 28, 2025",
-      // image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Electronics",
-      image: post2,
-    },
-    {
-      id: 3,
-      title: "Gift Ideas for Valentine's Day – 2025 Edition",
-      excerpt:
-        "Thoughtful and unique gift ideas that will impress your loved ones this Valentine's Day.",
-      author: "Nawraj Bhandari",
-      date: "Jan 22, 2025",
-      // image: "https://images.unsplash.com/photo-1519415711931-702deacf5be2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Lifestyle",
-      image: post3,
-    },
-    {
-      id: 4,
-      title: "How Our Products Are Made Sustainably",
-      excerpt:
-        "Learn about our commitment to sustainability and ethical manufacturing processes.",
-      author: "Nischal Shrestha",
-      date: "Apr 12, 2025",
-      // image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Sustainability",
-      image: post4,
-    },
-    {
-      id: 5,
-      title: "5 Ways to Style Your Denim Jacket",
-      excerpt:
-        "Transform your classic denim jacket into versatile outfits for any occasion.",
-      author: "Jiwan Karki",
-      date: "Mar 5, 2025",
-      // image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Fashion",
-      image: post5,
-    },
-    {
-      id: 6,
-      title: "2025 Home Decor Trends You Need to Know",
-      excerpt:
-        "Refresh your living space with the latest home decor trends of 2025.",
-      author: "Sujal Rai",
-      date: "Feb 18, 2025",
-      // image: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Home & Living",
-      image: post6,
-    },
-    {
-      id: 1,
-      title: "Top 10 Must-Have Outfits for Summer 2025",
-      excerpt:
-        "Discover the essential summer wardrobe that will keep you stylish and comfortable in the heat.",
-      author: "Manoj Katuwal",
-      date: "June 15, 2025",
-      // image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Fashion",
-      image: post1,
-    },
-    {
-      id: 2,
-      title: "Laptop Buying Guide: Best Laptops Under $1000",
-      excerpt:
-        "Find the perfect laptop that fits your budget without compromising on performance and style.",
-      author: "Ketan Katuwal",
-      date: "May 28, 2025",
-      // image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Electronics",
-      image: post2,
-    },
-    {
-      id: 3,
-      title: "Gift Ideas for Valentine's Day – 2025 Edition",
-      excerpt:
-        "Thoughtful and unique gift ideas that will impress your loved ones this Valentine's Day.",
-      author: "Nawraj Bhandari",
-      date: "Jan 22, 2025",
-      // image: "https://images.unsplash.com/photo-1519415711931-702deacf5be2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Lifestyle",
-      image: post3,
-    },
-    {
-      id: 4,
-      title: "How Our Products Are Made Sustainably",
-      excerpt:
-        "Learn about our commitment to sustainability and ethical manufacturing processes.",
-      author: "Nischal Shrestha",
-      date: "Apr 12, 2025",
-      // image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Sustainability",
-      image: post4,
-    },
-    {
-      id: 5,
-      title: "5 Ways to Style Your Denim Jacket",
-      excerpt:
-        "Transform your classic denim jacket into versatile outfits for any occasion.",
-      author: "Jiwan Karki",
-      date: "Mar 5, 2025",
-      // image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Fashion",
-      image: post5,
-    },
-    {
-      id: 6,
-      title: "2025 Home Decor Trends You Need to Know",
-      excerpt:
-        "Refresh your living space with the latest home decor trends of 2025.",
-      author: "Sujal Rai",
-      date: "Feb 18, 2025",
-      // image: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Home & Living",
-      image: post6,
-    },
-    {
-      id: 1,
-      title: "Top 10 Must-Have Outfits for Summer 2025",
-      excerpt:
-        "Discover the essential summer wardrobe that will keep you stylish and comfortable in the heat.",
-      author: "Manoj Katuwal",
-      date: "June 15, 2025",
-      // image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Fashion",
-      image: post1,
-    },
-    {
-      id: 2,
-      title: "Laptop Buying Guide: Best Laptops Under $1000",
-      excerpt:
-        "Find the perfect laptop that fits your budget without compromising on performance and style.",
-      author: "Ketan Katuwal",
-      date: "May 28, 2025",
-      // image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Electronics",
-      image: post2,
-    },
-    {
-      id: 3,
-      title: "Gift Ideas for Valentine's Day – 2025 Edition",
-      excerpt:
-        "Thoughtful and unique gift ideas that will impress your loved ones this Valentine's Day.",
-      author: "Nawraj Bhandari",
-      date: "Jan 22, 2025",
-      // image: "https://images.unsplash.com/photo-1519415711931-702deacf5be2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Lifestyle",
-      image: post3,
-    },
-    {
-      id: 4,
-      title: "How Our Products Are Made Sustainably",
-      excerpt:
-        "Learn about our commitment to sustainability and ethical manufacturing processes.",
-      author: "Nischal Shrestha",
-      date: "Apr 12, 2025",
-      // image: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Sustainability",
-      image: post4,
-    },
-    {
-      id: 5,
-      title: "5 Ways to Style Your Denim Jacket",
-      excerpt:
-        "Transform your classic denim jacket into versatile outfits for any occasion.",
-      author: "Jiwan Karki",
-      date: "Mar 5, 2025",
-      // image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Fashion",
-      image: post5,
-    },
-    {
-      id: 6,
-      title: "2025 Home Decor Trends You Need to Know",
-      excerpt:
-        "Refresh your living space with the latest home decor trends of 2025.",
-      author: "Sujal Rai",
-      date: "Feb 18, 2025",
-      // image: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Home & Living",
-      image: post6,
-    },
-  ];
+    
+  {
+    id: 1,
+    title: "ग्रीष्म २०२५ का लागि शीर्ष १० अनिवार्य पहिरनहरू",
+    excerpt:
+      "तपाईंलाई स्टाइलिश र आरामदायी राख्ने ग्रीष्मकालीन आधारभूत वार्डरोब पत्ता लगाउनुहोस्।",
+    author: "मनोज कटुवाल",
+    date: "१५ जून, २०२५",
+    category: "फेशन",
+    image: post1,
+  },
+  {
+    id: 2,
+    title: "ल्यापटप किन्ने मार्गदर्शन:१,३०,००० रुपैयाँ भित्रका उत्कृष्ट ल्यापटपहरू",
+    excerpt:
+      "तपाईंको बजेटमा फिट हुने, प्रदर्शन र स्टाइलमा सम्झौता नगरीकन उत्तम ल्यापटप पत्ता लगाउनुहोस्।",
+    author: "केतन कटुवाल",
+    date: "२८ मे, २०२५",
+    category: "इलेक्ट्रोनिक्स",
+    image: post2,
+  },
+  {
+    id: 3,
+    title: "भ्यालेन्टाइन्स डेका लागि उपहार विचार – २०२५ संस्करण",
+    excerpt:
+      "सोचविचार गरिएका र अनौठा उपहार विचारहरूले तपाईंका प्रियजनलाई प्रभाव पार्नेछन्।",
+    author: "नवराज भण्डारी",
+    date: "२२ जनवरी, २०२५",
+    category: "लाइफस्टाइल",
+    image: post3,
+  },
+  {
+    id: 4,
+    title: "हाम्रो उत्पादनहरू कसरी दिगो रूपमा बनाइन्छ",
+    excerpt:
+      "हाम्रो दिगोपना र नैतिक उत्पादन प्रक्रियाप्रति प्रतिबद्धताबारे जान्नुहोस्।",
+    author: "निश्चल श्रेष्ठ",
+    date: "१२ अप्रिल, २०२५",
+    category: "सस्टेनेबिलिटी",
+    image: post4,
+  },
+  {
+    id: 5,
+    title: "तपाईंको डेनिम ज्याकेटलाई स्टाइल गर्ने ५ तरिका",
+    excerpt:
+      "तपाईंको क्लासिक डेनिम ज्याकेटलाई कुनै पनि अवसरको लागि बहुमुखी पहिरनमा परिवर्तन गर्नुहोस्।",
+    author: "जीवन कार्की",
+    date: "५ मार्च, २०२५",
+    category: "फेशन",
+    image: post5,
+  },
+  {
+    id: 6,
+    title: "२०२५ का गृह सजावटका ट्रेन्डहरू जसलाई तपाईंले जान्नै पर्छ",
+    excerpt:
+      "२०२५ का नयाँ गृह सजावट ट्रेन्डहरूसँग तपाईंको बसोबासको स्थानलाई ताजगी दिनुहोस्।",
+    author: "सुजल राई",
+    date: "१८ फेब्रुअरी, २०२५",
+    category: "होम & लिभिङ",
+    image: post6,
+  }, {
+    id: 1,
+    title: "ग्रीष्म २०२५ का लागि शीर्ष १० अनिवार्य पहिरनहरू",
+    excerpt:
+      "तपाईंलाई स्टाइलिश र आरामदायी राख्ने ग्रीष्मकालीन आधारभूत वार्डरोब पत्ता लगाउनुहोस्।",
+    author: "मनोज कटुवाल",
+    date: "१५ जून, २०२५",
+    category: "फेशन",
+    image: post1,
+  },
+  {
+    id: 2,
+    title: "ल्यापटप किन्ने मार्गदर्शन:१,३०,००० रुपैयाँ भित्रका उत्कृष्ट ल्यापटपहरू",
+    excerpt:
+      "तपाईंको बजेटमा फिट हुने, प्रदर्शन र स्टाइलमा सम्झौता नगरीकन उत्तम ल्यापटप पत्ता लगाउनुहोस्।",
+    author: "केतन कटुवाल",
+    date: "२८ मे, २०२५",
+    category: "इलेक्ट्रोनिक्स",
+    image: post2,
+  },
+  {
+    id: 3,
+    title: "भ्यालेन्टाइन्स डेका लागि उपहार विचार – २०२५ संस्करण",
+    excerpt:
+      "सोचविचार गरिएका र अनौठा उपहार विचारहरूले तपाईंका प्रियजनलाई प्रभाव पार्नेछन्।",
+    author: "नवराज भण्डारी",
+    date: "२२ जनवरी, २०२५",
+    category: "लाइफस्टाइल",
+    image: post3,
+  },
+  {
+    id: 4,
+    title: "हाम्रो उत्पादनहरू कसरी दिगो रूपमा बनाइन्छ",
+    excerpt:
+      "हाम्रो दिगोपना र नैतिक उत्पादन प्रक्रियाप्रति प्रतिबद्धताबारे जान्नुहोस्।",
+    author: "निश्चल श्रेष्ठ",
+    date: "१२ अप्रिल, २०२५",
+    category: "सस्टेनेबिलिटी",
+    image: post4,
+  },
+  {
+    id: 5,
+    title: "तपाईंको डेनिम ज्याकेटलाई स्टाइल गर्ने ५ तरिका",
+    excerpt:
+      "तपाईंको क्लासिक डेनिम ज्याकेटलाई कुनै पनि अवसरको लागि बहुमुखी पहिरनमा परिवर्तन गर्नुहोस्।",
+    author: "जीवन कार्की",
+    date: "५ मार्च, २०२५",
+    category: "फेशन",
+    image: post5,
+  },
+  {
+    id: 6,
+    title: "२०२५ का गृह सजावटका ट्रेन्डहरू जसलाई तपाईंले जान्नै पर्छ",
+    excerpt:
+      "२०२५ का नयाँ गृह सजावट ट्रेन्डहरूसँग तपाईंको बसोबासको स्थानलाई ताजगी दिनुहोस्।",
+    author: "सुजल राई",
+    date: "१८ फेब्रुअरी, २०२५",
+    category: "होम & लिभिङ",
+    image: post6,
+  }, {
+    id: 1,
+    title: "ग्रीष्म २०२५ का लागि शीर्ष १० अनिवार्य पहिरनहरू",
+    excerpt:
+      "तपाईंलाई स्टाइलिश र आरामदायी राख्ने ग्रीष्मकालीन आधारभूत वार्डरोब पत्ता लगाउनुहोस्।",
+    author: "मनोज कटुवाल",
+    date: "१५ जून, २०२५",
+    category: "फेशन",
+    image: post1,
+  },
+  {
+    id: 2,
+    title: "ल्यापटप किन्ने मार्गदर्शन:१,३०,००० रुपैयाँ भित्रका उत्कृष्ट ल्यापटपहरू",
+    excerpt:
+      "तपाईंको बजेटमा फिट हुने, प्रदर्शन र स्टाइलमा सम्झौता नगरीकन उत्तम ल्यापटप पत्ता लगाउनुहोस्।",
+    author: "केतन कटुवाल",
+    date: "२८ मे, २०२५",
+    category: "इलेक्ट्रोनिक्स",
+    image: post2,
+  },
+  {
+    id: 3,
+    title: "भ्यालेन्टाइन्स डेका लागि उपहार विचार – २०२५ संस्करण",
+    excerpt:
+      "सोचविचार गरिएका र अनौठा उपहार विचारहरूले तपाईंका प्रियजनलाई प्रभाव पार्नेछन्।",
+    author: "नवराज भण्डारी",
+    date: "२२ जनवरी, २०२५",
+    category: "लाइफस्टाइल",
+    image: post3,
+  },
+  {
+    id: 4,
+    title: "हाम्रो उत्पादनहरू कसरी दिगो रूपमा बनाइन्छ",
+    excerpt:
+      "हाम्रो दिगोपना र नैतिक उत्पादन प्रक्रियाप्रति प्रतिबद्धताबारे जान्नुहोस्।",
+    author: "निश्चल श्रेष्ठ",
+    date: "१२ अप्रिल, २०२५",
+    category: "सस्टेनेबिलिटी",
+    image: post4,
+  },
+  {
+    id: 5,
+    title: "तपाईंको डेनिम ज्याकेटलाई स्टाइल गर्ने ५ तरिका",
+    excerpt:
+      "तपाईंको क्लासिक डेनिम ज्याकेटलाई कुनै पनि अवसरको लागि बहुमुखी पहिरनमा परिवर्तन गर्नुहोस्।",
+    author: "जीवन कार्की",
+    date: "५ मार्च, २०२५",
+    category: "फेशन",
+    image: post5,
+  },
+  {
+    id: 6,
+    title: "२०२५ का गृह सजावटका ट्रेन्डहरू जसलाई तपाईंले जान्नै पर्छ",
+    excerpt:
+      "२०२५ का नयाँ गृह सजावट ट्रेन्डहरूसँग तपाईंको बसोबासको स्थानलाई ताजगी दिनुहोस्।",
+    author: "सुजल राई",
+    date: "१८ फेब्रुअरी, २०२५",
+    category: "होम & लिभिङ",
+    image: post6,
+  }, {
+    id: 1,
+    title: "ग्रीष्म २०२५ का लागि शीर्ष १० अनिवार्य पहिरनहरू",
+    excerpt:
+      "तपाईंलाई स्टाइलिश र आरामदायी राख्ने ग्रीष्मकालीन आधारभूत वार्डरोब पत्ता लगाउनुहोस्।",
+    author: "मनोज कटुवाल",
+    date: "१५ जून, २०२५",
+    category: "फेशन",
+    image: post1,
+  },
+  {
+    id: 2,
+    title: "ल्यापटप किन्ने मार्गदर्शन:१,३०,००० रुपैयाँ भित्रका उत्कृष्ट ल्यापटपहरू",
+    excerpt:
+      "तपाईंको बजेटमा फिट हुने, प्रदर्शन र स्टाइलमा सम्झौता नगरीकन उत्तम ल्यापटप पत्ता लगाउनुहोस्।",
+    author: "केतन कटुवाल",
+    date: "२८ मे, २०२५",
+    category: "इलेक्ट्रोनिक्स",
+    image: post2,
+  },
+  {
+    id: 3,
+    title: "भ्यालेन्टाइन्स डेका लागि उपहार विचार – २०२५ संस्करण",
+    excerpt:
+      "सोचविचार गरिएका र अनौठा उपहार विचारहरूले तपाईंका प्रियजनलाई प्रभाव पार्नेछन्।",
+    author: "नवराज भण्डारी",
+    date: "२२ जनवरी, २०२५",
+    category: "लाइफस्टाइल",
+    image: post3,
+  },
+  {
+    id: 4,
+    title: "हाम्रो उत्पादनहरू कसरी दिगो रूपमा बनाइन्छ",
+    excerpt:
+      "हाम्रो दिगोपना र नैतिक उत्पादन प्रक्रियाप्रति प्रतिबद्धताबारे जान्नुहोस्।",
+    author: "निश्चल श्रेष्ठ",
+    date: "१२ अप्रिल, २०२५",
+    category: "सस्टेनेबिलिटी",
+    image: post4,
+  },
+  {
+    id: 5,
+    title: "तपाईंको डेनिम ज्याकेटलाई स्टाइल गर्ने ५ तरिका",
+    excerpt:
+      "तपाईंको क्लासिक डेनिम ज्याकेटलाई कुनै पनि अवसरको लागि बहुमुखी पहिरनमा परिवर्तन गर्नुहोस्।",
+    author: "जीवन कार्की",
+    date: "५ मार्च, २०२५",
+    category: "फेशन",
+    image: post5,
+  },
+  {
+    id: 6,
+    title: "२०२५ का गृह सजावटका ट्रेन्डहरू जसलाई तपाईंले जान्नै पर्छ",
+    excerpt:
+      "२०२५ का नयाँ गृह सजावट ट्रेन्डहरूसँग तपाईंको बसोबासको स्थानलाई ताजगी दिनुहोस्।",
+    author: "सुजल राई",
+    date: "१८ फेब्रुअरी, २०२५",
+    category: "होम & लिभिङ",
+    image: post6,
+  }, {
+    id: 1,
+    title: "ग्रीष्म २०२५ का लागि शीर्ष १० अनिवार्य पहिरनहरू",
+    excerpt:
+      "तपाईंलाई स्टाइलिश र आरामदायी राख्ने ग्रीष्मकालीन आधारभूत वार्डरोब पत्ता लगाउनुहोस्।",
+    author: "मनोज कटुवाल",
+    date: "१५ जून, २०२५",
+    category: "फेशन",
+    image: post1,
+  },
+  {
+    id: 2,
+    title: "ल्यापटप किन्ने मार्गदर्शन:१,३०,००० रुपैयाँ भित्रका उत्कृष्ट ल्यापटपहरू",
+    excerpt:
+      "तपाईंको बजेटमा फिट हुने, प्रदर्शन र स्टाइलमा सम्झौता नगरीकन उत्तम ल्यापटप पत्ता लगाउनुहोस्।",
+    author: "केतन कटुवाल",
+    date: "२८ मे, २०२५",
+    category: "इलेक्ट्रोनिक्स",
+    image: post2,
+  },
+  {
+    id: 3,
+    title: "भ्यालेन्टाइन्स डेका लागि उपहार विचार – २०२५ संस्करण",
+    excerpt:
+      "सोचविचार गरिएका र अनौठा उपहार विचारहरूले तपाईंका प्रियजनलाई प्रभाव पार्नेछन्।",
+    author: "नवराज भण्डारी",
+    date: "२२ जनवरी, २०२५",
+    category: "लाइफस्टाइल",
+    image: post3,
+  },
+  {
+    id: 4,
+    title: "हाम्रो उत्पादनहरू कसरी दिगो रूपमा बनाइन्छ",
+    excerpt:
+      "हाम्रो दिगोपना र नैतिक उत्पादन प्रक्रियाप्रति प्रतिबद्धताबारे जान्नुहोस्।",
+    author: "निश्चल श्रेष्ठ",
+    date: "१२ अप्रिल, २०२५",
+    category: "सस्टेनेबिलिटी",
+    image: post4,
+  },
+  {
+    id: 5,
+    title: "तपाईंको डेनिम ज्याकेटलाई स्टाइल गर्ने ५ तरिका",
+    excerpt:
+      "तपाईंको क्लासिक डेनिम ज्याकेटलाई कुनै पनि अवसरको लागि बहुमुखी पहिरनमा परिवर्तन गर्नुहोस्।",
+    author: "जीवन कार्की",
+    date: "५ मार्च, २०२५",
+    category: "फेशन",
+    image: post5,
+  },
+  {
+    id: 6,
+    title: "२०२५ का गृह सजावटका ट्रेन्डहरू जसलाई तपाईंले जान्नै पर्छ",
+    excerpt:
+      "२०२५ का नयाँ गृह सजावट ट्रेन्डहरूसँग तपाईंको बसोबासको स्थानलाई ताजगी दिनुहोस्।",
+    author: "सुजल राई",
+    date: "१८ फेब्रुअरी, २०२५",
+    category: "होम & लिभिङ",
+    image: post6,
+  }, {
+    id: 1,
+    title: "ग्रीष्म २०२५ का लागि शीर्ष १० अनिवार्य पहिरनहरू",
+    excerpt:
+      "तपाईंलाई स्टाइलिश र आरामदायी राख्ने ग्रीष्मकालीन आधारभूत वार्डरोब पत्ता लगाउनुहोस्।",
+    author: "मनोज कटुवाल",
+    date: "१५ जून, २०२५",
+    category: "फेशन",
+    image: post1,
+  },
+  {
+    id: 2,
+    title: "ल्यापटप किन्ने मार्गदर्शन:१,३०,००० रुपैयाँ भित्रका उत्कृष्ट ल्यापटपहरू",
+    excerpt:
+      "तपाईंको बजेटमा फिट हुने, प्रदर्शन र स्टाइलमा सम्झौता नगरीकन उत्तम ल्यापटप पत्ता लगाउनुहोस्।",
+    author: "केतन कटुवाल",
+    date: "२८ मे, २०२५",
+    category: "इलेक्ट्रोनिक्स",
+    image: post2,
+  },
+  {
+    id: 3,
+    title: "भ्यालेन्टाइन्स डेका लागि उपहार विचार – २०२५ संस्करण",
+    excerpt:
+      "सोचविचार गरिएका र अनौठा उपहार विचारहरूले तपाईंका प्रियजनलाई प्रभाव पार्नेछन्।",
+    author: "नवराज भण्डारी",
+    date: "२२ जनवरी, २०२५",
+    category: "लाइफस्टाइल",
+    image: post3,
+  },
+  {
+    id: 4,
+    title: "हाम्रो उत्पादनहरू कसरी दिगो रूपमा बनाइन्छ",
+    excerpt:
+      "हाम्रो दिगोपना र नैतिक उत्पादन प्रक्रियाप्रति प्रतिबद्धताबारे जान्नुहोस्।",
+    author: "निश्चल श्रेष्ठ",
+    date: "१२ अप्रिल, २०२५",
+    category: "सस्टेनेबिलिटी",
+    image: post4,
+  },
+  {
+    id: 5,
+    title: "तपाईंको डेनिम ज्याकेटलाई स्टाइल गर्ने ५ तरिका",
+    excerpt:
+      "तपाईंको क्लासिक डेनिम ज्याकेटलाई कुनै पनि अवसरको लागि बहुमुखी पहिरनमा परिवर्तन गर्नुहोस्।",
+    author: "जीवन कार्की",
+    date: "५ मार्च, २०२५",
+    category: "फेशन",
+    image: post5,
+  },
+  {
+    id: 6,
+    title: "२०२५ का गृह सजावटका ट्रेन्डहरू जसलाई तपाईंले जान्नै पर्छ",
+    excerpt:
+      "२०२५ का नयाँ गृह सजावट ट्रेन्डहरूसँग तपाईंको बसोबासको स्थानलाई ताजगी दिनुहोस्।",
+    author: "सुजल राई",
+    date: "१८ फेब्रुअरी, २०२५",
+    category: "होम & लिभिङ",
+    image: post6,
+  }, {
+    id: 1,
+    title: "ग्रीष्म २०२५ का लागि शीर्ष १० अनिवार्य पहिरनहरू",
+    excerpt:
+      "तपाईंलाई स्टाइलिश र आरामदायी राख्ने ग्रीष्मकालीन आधारभूत वार्डरोब पत्ता लगाउनुहोस्।",
+    author: "मनोज कटुवाल",
+    date: "१५ जून, २०२५",
+    category: "फेशन",
+    image: post1,
+  },
+  {
+    id: 2,
+    title: "ल्यापटप किन्ने मार्गदर्शन:१,३०,००० रुपैयाँ भित्रका उत्कृष्ट ल्यापटपहरू",
+    excerpt:
+      "तपाईंको बजेटमा फिट हुने, प्रदर्शन र स्टाइलमा सम्झौता नगरीकन उत्तम ल्यापटप पत्ता लगाउनुहोस्।",
+    author: "केतन कटुवाल",
+    date: "२८ मे, २०२५",
+    category: "इलेक्ट्रोनिक्स",
+    image: post2,
+  },
+  {
+    id: 3,
+    title: "भ्यालेन्टाइन्स डेका लागि उपहार विचार – २०२५ संस्करण",
+    excerpt:
+      "सोचविचार गरिएका र अनौठा उपहार विचारहरूले तपाईंका प्रियजनलाई प्रभाव पार्नेछन्।",
+    author: "नवराज भण्डारी",
+    date: "२२ जनवरी, २०२५",
+    category: "लाइफस्टाइल",
+    image: post3,
+  },
+  {
+    id: 4,
+    title: "हाम्रो उत्पादनहरू कसरी दिगो रूपमा बनाइन्छ",
+    excerpt:
+      "हाम्रो दिगोपना र नैतिक उत्पादन प्रक्रियाप्रति प्रतिबद्धताबारे जान्नुहोस्।",
+    author: "निश्चल श्रेष्ठ",
+    date: "१२ अप्रिल, २०२५",
+    category: "सस्टेनेबिलिटी",
+    image: post4,
+  },
+  {
+    id: 5,
+    title: "तपाईंको डेनिम ज्याकेटलाई स्टाइल गर्ने ५ तरिका",
+    excerpt:
+      "तपाईंको क्लासिक डेनिम ज्याकेटलाई कुनै पनि अवसरको लागि बहुमुखी पहिरनमा परिवर्तन गर्नुहोस्।",
+    author: "जीवन कार्की",
+    date: "५ मार्च, २०२५",
+    category: "फेशन",
+    image: post5,
+  },
+  {
+    id: 6,
+    title: "२०२५ का गृह सजावटका ट्रेन्डहरू जसलाई तपाईंले जान्नै पर्छ",
+    excerpt:
+      "२०२५ का नयाँ गृह सजावट ट्रेन्डहरूसँग तपाईंको बसोबासको स्थानलाई ताजगी दिनुहोस्।",
+    author: "सुजल राई",
+    date: "१८ फेब्रुअरी, २०२५",
+    category: "होम & लिभिङ",
+    image: post6,
+  }, {
+    id: 1,
+    title: "ग्रीष्म २०२५ का लागि शीर्ष १० अनिवार्य पहिरनहरू",
+    excerpt:
+      "तपाईंलाई स्टाइलिश र आरामदायी राख्ने ग्रीष्मकालीन आधारभूत वार्डरोब पत्ता लगाउनुहोस्।",
+    author: "मनोज कटुवाल",
+    date: "१५ जून, २०२५",
+    category: "फेशन",
+    image: post1,
+  },
+  {
+    id: 2,
+    title: "ल्यापटप किन्ने मार्गदर्शन:१,३०,००० रुपैयाँ भित्रका उत्कृष्ट ल्यापटपहरू",
+    excerpt:
+      "तपाईंको बजेटमा फिट हुने, प्रदर्शन र स्टाइलमा सम्झौता नगरीकन उत्तम ल्यापटप पत्ता लगाउनुहोस्।",
+    author: "केतन कटुवाल",
+    date: "२८ मे, २०२५",
+    category: "इलेक्ट्रोनिक्स",
+    image: post2,
+  },
+  {
+    id: 3,
+    title: "भ्यालेन्टाइन्स डेका लागि उपहार विचार – २०२५ संस्करण",
+    excerpt:
+      "सोचविचार गरिएका र अनौठा उपहार विचारहरूले तपाईंका प्रियजनलाई प्रभाव पार्नेछन्।",
+    author: "नवराज भण्डारी",
+    date: "२२ जनवरी, २०२५",
+    category: "लाइफस्टाइल",
+    image: post3,
+  },
+  {
+    id: 4,
+    title: "हाम्रो उत्पादनहरू कसरी दिगो रूपमा बनाइन्छ",
+    excerpt:
+      "हाम्रो दिगोपना र नैतिक उत्पादन प्रक्रियाप्रति प्रतिबद्धताबारे जान्नुहोस्।",
+    author: "निश्चल श्रेष्ठ",
+    date: "१२ अप्रिल, २०२५",
+    category: "सस्टेनेबिलिटी",
+    image: post4,
+  },
+  {
+    id: 5,
+    title: "तपाईंको डेनिम ज्याकेटलाई स्टाइल गर्ने ५ तरिका",
+    excerpt:
+      "तपाईंको क्लासिक डेनिम ज्याकेटलाई कुनै पनि अवसरको लागि बहुमुखी पहिरनमा परिवर्तन गर्नुहोस्।",
+    author: "जीवन कार्की",
+    date: "५ मार्च, २०२५",
+    category: "फेशन",
+    image: post5,
+  },
+  {
+    id: 6,
+    title: "२०२५ का गृह सजावटका ट्रेन्डहरू जसलाई तपाईंले जान्नै पर्छ",
+    excerpt:
+      "२०२५ का नयाँ गृह सजावट ट्रेन्डहरूसँग तपाईंको बसोबासको स्थानलाई ताजगी दिनुहोस्।",
+    author: "सुजल राई",
+    date: "१८ फेब्रुअरी, २०२५",
+    category: "होम & लिभिङ",
+    image: post6,
+  }, {
+    id: 1,
+    title: "ग्रीष्म २०२५ का लागि शीर्ष १० अनिवार्य पहिरनहरू",
+    excerpt:
+      "तपाईंलाई स्टाइलिश र आरामदायी राख्ने ग्रीष्मकालीन आधारभूत वार्डरोब पत्ता लगाउनुहोस्।",
+    author: "मनोज कटुवाल",
+    date: "१५ जून, २०२५",
+    category: "फेशन",
+    image: post1,
+  },
+  {
+    id: 2,
+    title: "ल्यापटप किन्ने मार्गदर्शन:१,३०,००० रुपैयाँ भित्रका उत्कृष्ट ल्यापटपहरू",
+    excerpt:
+      "तपाईंको बजेटमा फिट हुने, प्रदर्शन र स्टाइलमा सम्झौता नगरीकन उत्तम ल्यापटप पत्ता लगाउनुहोस्।",
+    author: "केतन कटुवाल",
+    date: "२८ मे, २०२५",
+    category: "इलेक्ट्रोनिक्स",
+    image: post2,
+  },
+  {
+    id: 3,
+    title: "भ्यालेन्टाइन्स डेका लागि उपहार विचार – २०२५ संस्करण",
+    excerpt:
+      "सोचविचार गरिएका र अनौठा उपहार विचारहरूले तपाईंका प्रियजनलाई प्रभाव पार्नेछन्।",
+    author: "नवराज भण्डारी",
+    date: "२२ जनवरी, २०२५",
+    category: "लाइफस्टाइल",
+    image: post3,
+  },
+  {
+    id: 4,
+    title: "हाम्रो उत्पादनहरू कसरी दिगो रूपमा बनाइन्छ",
+    excerpt:
+      "हाम्रो दिगोपना र नैतिक उत्पादन प्रक्रियाप्रति प्रतिबद्धताबारे जान्नुहोस्।",
+    author: "निश्चल श्रेष्ठ",
+    date: "१२ अप्रिल, २०२५",
+    category: "सस्टेनेबिलिटी",
+    image: post4,
+  },
+  {
+    id: 5,
+    title: "तपाईंको डेनिम ज्याकेटलाई स्टाइल गर्ने ५ तरिका",
+    excerpt:
+      "तपाईंको क्लासिक डेनिम ज्याकेटलाई कुनै पनि अवसरको लागि बहुमुखी पहिरनमा परिवर्तन गर्नुहोस्।",
+    author: "जीवन कार्की",
+    date: "५ मार्च, २०२५",
+    category: "फेशन",
+    image: post5,
+  },
+  {
+    id: 6,
+    title: "२०२५ का गृह सजावटका ट्रेन्डहरू जसलाई तपाईंले जान्नै पर्छ",
+    excerpt:
+      "२०२५ का नयाँ गृह सजावट ट्रेन्डहरूसँग तपाईंको बसोबासको स्थानलाई ताजगी दिनुहोस्।",
+    author: "सुजल राई",
+    date: "१८ फेब्रुअरी, २०२५",
+    category: "होम & लिभिङ",
+    image: post6,
+  }, {
+    id: 1,
+    title: "ग्रीष्म २०२५ का लागि शीर्ष १० अनिवार्य पहिरनहरू",
+    excerpt:
+      "तपाईंलाई स्टाइलिश र आरामदायी राख्ने ग्रीष्मकालीन आधारभूत वार्डरोब पत्ता लगाउनुहोस्।",
+    author: "मनोज कटुवाल",
+    date: "१५ जून, २०२५",
+    category: "फेशन",
+    image: post1,
+  },
+  {
+    id: 2,
+    title: "ल्यापटप किन्ने मार्गदर्शन:१,३०,००० रुपैयाँ भित्रका उत्कृष्ट ल्यापटपहरू",
+    excerpt:
+      "तपाईंको बजेटमा फिट हुने, प्रदर्शन र स्टाइलमा सम्झौता नगरीकन उत्तम ल्यापटप पत्ता लगाउनुहोस्।",
+    author: "केतन कटुवाल",
+    date: "२८ मे, २०२५",
+    category: "इलेक्ट्रोनिक्स",
+    image: post2,
+  },
+  {
+    id: 3,
+    title: "भ्यालेन्टाइन्स डेका लागि उपहार विचार – २०२५ संस्करण",
+    excerpt:
+      "सोचविचार गरिएका र अनौठा उपहार विचारहरूले तपाईंका प्रियजनलाई प्रभाव पार्नेछन्।",
+    author: "नवराज भण्डारी",
+    date: "२२ जनवरी, २०२५",
+    category: "लाइफस्टाइल",
+    image: post3,
+  },
+  {
+    id: 4,
+    title: "हाम्रो उत्पादनहरू कसरी दिगो रूपमा बनाइन्छ",
+    excerpt:
+      "हाम्रो दिगोपना र नैतिक उत्पादन प्रक्रियाप्रति प्रतिबद्धताबारे जान्नुहोस्।",
+    author: "निश्चल श्रेष्ठ",
+    date: "१२ अप्रिल, २०२५",
+    category: "सस्टेनेबिलिटी",
+    image: post4,
+  },
+  {
+    id: 5,
+    title: "तपाईंको डेनिम ज्याकेटलाई स्टाइल गर्ने ५ तरिका",
+    excerpt:
+      "तपाईंको क्लासिक डेनिम ज्याकेटलाई कुनै पनि अवसरको लागि बहुमुखी पहिरनमा परिवर्तन गर्नुहोस्।",
+    author: "जीवन कार्की",
+    date: "५ मार्च, २०२५",
+    category: "फेशन",
+    image: post5,
+  },
+  {
+    id: 6,
+    title: "२०२५ का गृह सजावटका ट्रेन्डहरू जसलाई तपाईंले जान्नै पर्छ",
+    excerpt:
+      "२०२५ का नयाँ गृह सजावट ट्रेन्डहरूसँग तपाईंको बसोबासको स्थानलाई ताजगी दिनुहोस्।",
+    author: "सुजल राई",
+    date: "१८ फेब्रुअरी, २०२५",
+    category: "होम & लिभिङ",
+    image: post6,
+  }, {
+    id: 1,
+    title: "ग्रीष्म २०२५ का लागि शीर्ष १० अनिवार्य पहिरनहरू",
+    excerpt:
+      "तपाईंलाई स्टाइलिश र आरामदायी राख्ने ग्रीष्मकालीन आधारभूत वार्डरोब पत्ता लगाउनुहोस्।",
+    author: "मनोज कटुवाल",
+    date: "१५ जून, २०२५",
+    category: "फेशन",
+    image: post1,
+  },
+  {
+    id: 2,
+    title: "ल्यापटप किन्ने मार्गदर्शन:१,३०,००० रुपैयाँ भित्रका उत्कृष्ट ल्यापटपहरू",
+    excerpt:
+      "तपाईंको बजेटमा फिट हुने, प्रदर्शन र स्टाइलमा सम्झौता नगरीकन उत्तम ल्यापटप पत्ता लगाउनुहोस्।",
+    author: "केतन कटुवाल",
+    date: "२८ मे, २०२५",
+    category: "इलेक्ट्रोनिक्स",
+    image: post2,
+  },
+  {
+    id: 3,
+    title: "भ्यालेन्टाइन्स डेका लागि उपहार विचार – २०२५ संस्करण",
+    excerpt:
+      "सोचविचार गरिएका र अनौठा उपहार विचारहरूले तपाईंका प्रियजनलाई प्रभाव पार्नेछन्।",
+    author: "नवराज भण्डारी",
+    date: "२२ जनवरी, २०२५",
+    category: "लाइफस्टाइल",
+    image: post3,
+  },
+  {
+    id: 4,
+    title: "हाम्रो उत्पादनहरू कसरी दिगो रूपमा बनाइन्छ",
+    excerpt:
+      "हाम्रो दिगोपना र नैतिक उत्पादन प्रक्रियाप्रति प्रतिबद्धताबारे जान्नुहोस्।",
+    author: "निश्चल श्रेष्ठ",
+    date: "१२ अप्रिल, २०२५",
+    category: "सस्टेनेबिलिटी",
+    image: post4,
+  },
+  {
+    id: 5,
+    title: "तपाईंको डेनिम ज्याकेटलाई स्टाइल गर्ने ५ तरिका",
+    excerpt:
+      "तपाईंको क्लासिक डेनिम ज्याकेटलाई कुनै पनि अवसरको लागि बहुमुखी पहिरनमा परिवर्तन गर्नुहोस्।",
+    author: "जीवन कार्की",
+    date: "५ मार्च, २०२५",
+    category: "फेशन",
+    image: post5,
+  },
+  {
+    id: 6,
+    title: "२०२५ का गृह सजावटका ट्रेन्डहरू जसलाई तपाईंले जान्नै पर्छ",
+    excerpt:
+      "२०२५ का नयाँ गृह सजावट ट्रेन्डहरूसँग तपाईंको बसोबासको स्थानलाई ताजगी दिनुहोस्।",
+    author: "सुजल राई",
+    date: "१८ फेब्रुअरी, २०२५",
+    category: "होम & लिभिङ",
+    image: post6,
+  }, {
+    id: 1,
+    title: "ग्रीष्म २०२५ का लागि शीर्ष १० अनिवार्य पहिरनहरू",
+    excerpt:
+      "तपाईंलाई स्टाइलिश र आरामदायी राख्ने ग्रीष्मकालीन आधारभूत वार्डरोब पत्ता लगाउनुहोस्।",
+    author: "मनोज कटुवाल",
+    date: "१५ जून, २०२५",
+    category: "फेशन",
+    image: post1,
+  },
+  {
+    id: 2,
+    title: "ल्यापटप किन्ने मार्गदर्शन:१,३०,००० रुपैयाँ भित्रका उत्कृष्ट ल्यापटपहरू",
+    excerpt:
+      "तपाईंको बजेटमा फिट हुने, प्रदर्शन र स्टाइलमा सम्झौता नगरीकन उत्तम ल्यापटप पत्ता लगाउनुहोस्।",
+    author: "केतन कटुवाल",
+    date: "२८ मे, २०२५",
+    category: "इलेक्ट्रोनिक्स",
+    image: post2,
+  },
+  {
+    id: 3,
+    title: "भ्यालेन्टाइन्स डेका लागि उपहार विचार – २०२५ संस्करण",
+    excerpt:
+      "सोचविचार गरिएका र अनौठा उपहार विचारहरूले तपाईंका प्रियजनलाई प्रभाव पार्नेछन्।",
+    author: "नवराज भण्डारी",
+    date: "२२ जनवरी, २०२५",
+    category: "लाइफस्टाइल",
+    image: post3,
+  },
+  {
+    id: 4,
+    title: "हाम्रो उत्पादनहरू कसरी दिगो रूपमा बनाइन्छ",
+    excerpt:
+      "हाम्रो दिगोपना र नैतिक उत्पादन प्रक्रियाप्रति प्रतिबद्धताबारे जान्नुहोस्।",
+    author: "निश्चल श्रेष्ठ",
+    date: "१२ अप्रिल, २०२५",
+    category: "सस्टेनेबिलिटी",
+    image: post4,
+  },
+  {
+    id: 5,
+    title: "तपाईंको डेनिम ज्याकेटलाई स्टाइल गर्ने ५ तरिका",
+    excerpt:
+      "तपाईंको क्लासिक डेनिम ज्याकेटलाई कुनै पनि अवसरको लागि बहुमुखी पहिरनमा परिवर्तन गर्नुहोस्।",
+    author: "जीवन कार्की",
+    date: "५ मार्च, २०२५",
+    category: "फेशन",
+    image: post5,
+  },
+  {
+    id: 6,
+    title: "२०२५ का गृह सजावटका ट्रेन्डहरू जसलाई तपाईंले जान्नै पर्छ",
+    excerpt:
+      "२०२५ का नयाँ गृह सजावट ट्रेन्डहरूसँग तपाईंको बसोबासको स्थानलाई ताजगी दिनुहोस्।",
+    author: "सुजल राई",
+    date: "१८ फेब्रुअरी, २०२५",
+    category: "होम & लिभिङ",
+    image: post6,
+  },
+];
+
+  
 
   const seeMoreContent = () => {
     setVisiblePost((prev)=>prev + 3 )
@@ -367,7 +749,7 @@ const Blog = () => {
               See More{" "}
             </Button>
           </article>
-        ))}
+        ))}     
       </div>
 
       {visiblePost < posts.length && (

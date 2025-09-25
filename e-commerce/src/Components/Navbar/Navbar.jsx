@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
-import { IoIosMenu } from "react-icons/io";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosMenu, IoIosArrowDown } from "react-icons/io";
 import { CiDeliveryTruck } from "react-icons/ci";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
@@ -9,57 +8,44 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
   const [catIndex, setCatIndex] = useState(null);
+
   const categories = [
     {
-      name: "Fashion",
-      subcategories: ["Men", "Women", "Kids", "Boys", "Girls", "Accessories"],
+      name: "फेशन",
+      subcategories: ["पुरुष", "महिला", "केटाकेटी", "केटा", "केटी", "सामग्री"],
     },
     {
-      name: "Electronics",
-      subcategories: ["TVs", "Audio", "Cameras", "Gaming", "Accessories"],
+      name: "इलेक्ट्रोनिक्स",
+      subcategories: ["टिभी", "अडियो", "क्यामेरा", "गेमिङ", "सामग्री"],
     },
     {
-      name: "Mobile",
-      subcategories: ["Smartphones", "Tablets", "Wearables", "Accessories"],
+      name: "मोबाइल",
+      subcategories: ["स्मार्टफोन", "ट्याब्लेट", "वेरेबल्स", "सामग्री"],
     },
     {
-      name: "Laptops",
-      subcategories: ["Gaming", "Business", "Ultrabooks", "Accessories"],
+      name: "ल्यापटप",
+      subcategories: ["गेमिङ", "व्यवसाय", "अल्ट्राबुक्स", "सामग्री"],
     },
     {
-      name: "Smart Watch",
-      subcategories: ["Fitness", "Luxury", "Sports", "Basic"],
+      name: "स्मार्ट वाच",
+      subcategories: ["फिटनेस", "लक्जरी", "खेलकुद", "साधारण"],
     },
     {
-      name: "Chargers",
-      subcategories: [
-        "Wireless",
-        "Fast Charging",
-        "Car Chargers",
-        "Power Banks",
-      ],
+      name: "चार्जर",
+      subcategories: ["वायरलेस", "फास्ट चार्जिङ", "कार चार्जर", "पावर बैंक"],
     },
     {
-      name: "Bags",
-      subcategories: ["Backpacks", "Handbags", "Travel", "Laptop Bags"],
+      name: "ब्याक",
+      subcategories: ["ब्याकप्याक", "ह्यान्डब्याग", "यात्रा", "ल्यापटप ब्याग"],
     },
     {
-      name: "Footwear",
-      subcategories: ["Sports", "Casual", "Formal", "Sandals"],
+      name: "जुत्ता",
+      subcategories: ["खेलकुद", "क्याजुअल", "फर्मल", "स्यान्डल"],
     },
   ];
 
-  const toggleSidebar = () => {
-    setSidebar(!sidebar);
-  };
-
-  const toggleCategory = (index) => {
-    if (catIndex === index) {
-      setCatIndex(null);
-    } else {
-      setCatIndex(index);
-    }
-  };
+  const toggleSidebar = () => setSidebar(!sidebar);
+  const toggleCategory = (index) => setCatIndex(catIndex === index ? null : index);
 
   return (
     <nav>
@@ -73,9 +59,8 @@ const Navbar = () => {
             <span className="menu icon">
               <IoIosMenu />
             </span>
-            Shop by Category
+            वर्ग अनुसार किनमेल गर्नुहोस्
             <span className="arrow icon">
-              {" "}
               <IoIosArrowDown />
             </span>
           </Button>
@@ -85,112 +70,76 @@ const Navbar = () => {
           <ul>
             <li>
               <Link to="/" className="nav-link">
-                Home
+                गृह
               </Link>
             </li>
             <li className="dropdown">
-              <Link to="/" className="nav-link">
-                Fashion
+              <Link to="/fashion" className="nav-link">
+                फेशन
               </Link>
               <ul className="dropdown-menu">
-                <li className="dropdown-item">
+                <li>
                   <Link to="/" className="nav-link">
-                    <Button variant="text" className="nav-btn">
-                      Men
-                    </Button>
+                    <Button variant="text" className="nav-btn">पुरुष</Button>
                   </Link>
                 </li>
                 <li>
                   <Link to="/" className="nav-link">
-                    <Button variant="text" className="nav-btn">
-                      Women
-                    </Button>
+                    <Button variant="text" className="nav-btn">महिला</Button>
                   </Link>
                 </li>
                 <li>
                   <Link to="/" className="nav-link">
-                    <Button variant="text" className="nav-btn">
-                      Girls
-                    </Button>
+                    <Button variant="text" className="nav-btn">केटी</Button>
                   </Link>
                 </li>
                 <li>
                   <Link to="/" className="nav-link">
-                    <Button variant="text" className="nav-btn">
-                      Kids
-                    </Button>
+                    <Button variant="text" className="nav-btn">केटाकेटी</Button>
                   </Link>
                 </li>
                 <li>
                   <Link to="/" className="nav-link">
-                    <Button variant="text" className="nav-btn">
-                      Boys
-                    </Button>
+                    <Button variant="text" className="nav-btn">केटा</Button>
                   </Link>
                 </li>
               </ul>
             </li>
-            <li className="dropdown">
-              <Link to="/" className="nav-link">
-                Electronics
-              </Link>
-              <ul className="dropdown-menu">
-                <li>
-                  <Link to={"/"} className="nav-link">
-                  <Button variant="text" className="nav-btn">TVs</Button>
-                  </Link>
-                  </li>
-                <li>
-                  <Link to={"/"} className="nav-link">
-                  <Button variant="text" className="nav-btn">Audio</Button>
-                  </Link>
-                  </li>
-                <li>
-                  <Link>
-                  <Button variant="text" className="nav-btn">Cameras</Button>
-                  </Link>
-                  </li>
-                <li>
-                  <Link >
-                  <Button variant="text" className="nav-btn">Gaming</Button>
-                  </Link>
-                  </li>
-                <li>Accessories</li>
-              </ul>
-            </li>
-            <li className="dropdown">
-              <Link to="/" className="nav-link">
-                Bags
-              </Link>
-              <ul className="dropdown-menu">
-                <li>Men</li>
-                <li>Women</li>
-              </ul>
-            </li>
-            <li>
-              <Link to="/" className="nav-link">
-                Beauty
-              </Link>
-            </li>
-            <li>
-              <Link to="/" className="nav-link">
-                Wellness
-              </Link>
-            </li>
-            <li>
-              <Link to="/" className="nav-link">
-                {" "}
-                Jewellary
-              </Link>
-            </li>
-            <li className="dropdown">
-              <Link to="/" className="nav-link">
-                Footwear
-              </Link>
-              <ul className="dropdown-menu">
-                <li>Men Footwear</li>
 
-                <li>Women Footwear</li>
+            <li className="dropdown">
+              <Link to="/" className="nav-link">
+                इलेक्ट्रोनिक्स
+              </Link>
+              <ul className="dropdown-menu">
+                <li><Link to="/" className="nav-link"><Button variant="text" className="nav-btn">टिभी</Button></Link></li>
+                <li><Link to="/" className="nav-link"><Button variant="text" className="nav-btn">अडियो</Button></Link></li>
+                <li><Link to="/" className="nav-link"><Button variant="text" className="nav-btn">क्यामेरा</Button></Link></li>
+                <li><Link to="/" className="nav-link"><Button variant="text" className="nav-btn">गेमिङ</Button></Link></li>
+                <li>सामग्री</li>
+              </ul>
+            </li>
+
+            <li className="dropdown">
+              <Link to="/" className="nav-link">
+                ब्याग
+              </Link>
+              <ul className="dropdown-menu">
+                <li>पुरुष</li>
+                <li>महिला</li>
+              </ul>
+            </li>
+
+            <li><Link to="/" className="nav-link">सौन्दर्य</Link></li>
+            <li><Link to="/" className="nav-link">स्वास्थ्य</Link></li>
+            <li><Link to="/" className="nav-link">ज्वेलरी</Link></li>
+
+            <li className="dropdown">
+              <Link to="/" className="nav-link">
+                जुत्ता
+              </Link>
+              <ul className="dropdown-menu">
+                <li>पुरुष जुत्ता</li>
+                <li>महिला जुत्ता</li>
               </ul>
             </li>
           </ul>
@@ -198,17 +147,16 @@ const Navbar = () => {
 
         <div className="delivery">
           <Button variant="text" className="nav-btn text">
-            <span className="arrow icon">
-              <CiDeliveryTruck />
-            </span>
-            All Over Nepal Delivery
+            <span className="arrow icon"><CiDeliveryTruck /></span>
+            नेपालभरि वितरण
           </Button>
         </div>
       </div>
+
       <div className={sidebar ? "sidebar-active" : "sidebar"}>
         <div className="logo-container">
           <h2 className="logo">SHOPLY</h2>
-          <h4 className="mart">Big Mega Mart </h4>
+          <h4 className="mart">बिग मेगा मार्ट</h4>
         </div>
         <ul>
           {categories.map((category, index) => (
@@ -218,21 +166,11 @@ const Navbar = () => {
                 onClick={() => toggleCategory(index)}
               >
                 <span className="category-name">{category.name}</span>
-                <span className="arrow">
-                  <IoIosArrowDown />
-                </span>
+                <span className="arrow"><IoIosArrowDown /></span>
               </div>
-
-              {/* Subcategories */}
-              <ul
-                className={`subcategory-list ${
-                  catIndex === index ? "expanded" : ""
-                }`}
-              >
+              <ul className={`subcategory-list ${catIndex === index ? "expanded" : ""}`}>
                 {category.subcategories.map((sub, subIndex) => (
-                  <li key={subIndex} className="subcategory-item">
-                    {sub}
-                  </li>
+                  <li key={subIndex} className="subcategory-item">{sub}</li>
                 ))}
               </ul>
             </li>
