@@ -4,6 +4,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
 import { PiRectangleDashedThin } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 
 
@@ -16,8 +17,11 @@ const Product = ({
   rating,
   price,
   originalPrice,
+  id
 }) => {
   return (
+
+    <Link to={`/product/${id}`} style={{textDecoration:"none", color:"inherit"}}>
     <div className="product-list">
       <div className="product-img-container">
 
@@ -46,6 +50,7 @@ const Product = ({
         </div>
       </div>
     </div>
+    </Link>
   );
 };
 

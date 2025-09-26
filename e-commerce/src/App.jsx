@@ -5,6 +5,8 @@ import Home from "./Pages/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
 import MainHeader from "./Components/MainHeader/MainHeader";
 import Fashion from "./Pages/Fashion/Fashion";
+import ProductDetails from "./Components/ProductDetails/ProductDetails";
+import Features from "./Components/Features/Features";
 
 function App() {
 
@@ -14,7 +16,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/fashion" element={<Fashion/>}/>
+        <Route path="/product/:productId" element={<ProductDetails/>}/>
       </Routes>
+                  {/* <Features /> */}
+                  <Features/>
+
     </>
   );
 }

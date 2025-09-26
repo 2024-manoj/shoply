@@ -14,7 +14,8 @@ const ProductItem = ({
   showLeftsli = true,
   showRightsli = true,
   gridLayout = false,
-  prod
+  prod,
+  id
 }) => {
   const scrollRef = useRef();
 
@@ -84,6 +85,7 @@ const ProductItem = ({
               rating={p.rating}
               originalPrice={p.originalPrice}
               price={p.price}
+              id={p.id}
             />
           ))}
         </div>
