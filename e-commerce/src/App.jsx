@@ -9,8 +9,9 @@ import ProductDetails from "./Components/ProductDetails/ProductDetails";
 import Features from "./Components/Features/Features";
 import ContextProvider from "./ContextProvider/ContextProvider";
 import ProductDialog from "./Components/ProductDialog/ProductDialog";
+// import { Login } from "@mui/icons-material";
 // import { Dialog } from "@mui/material";
-
+import Login from './Pages/Login/Login'
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/fashion" element={<Fashion />} />
           <Route path="/product/:productId" element={<ProductDetails />} />
+          <Route path="/login" element={<Login/>}></Route>
         </Routes>
         {/* <Features /> */}
         < ProductDialog />

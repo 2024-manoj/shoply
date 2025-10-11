@@ -50,7 +50,7 @@ const Home = () => {
             <br />
 
             < Blog />
-            <Features />
+            {/* <Features /> */}
 
 
 
