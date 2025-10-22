@@ -8,8 +8,13 @@ import { FiShoppingCart } from "react-icons/fi";
 import { IoGitCompareOutline } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
 import Tooltip from "@mui/material/Tooltip";
+import { useDialog } from "../../ContextProvider/ContextProvider";
+import { FaUserCircle } from "react-icons/fa";
+import manoj from "../../assets/images/manoj.jpg";
 
 const Header = () => {
+  const { toggleDrawer, isLogin, setIsLogin } = useDialog();
+
   return (
     <header>
       <div className="container">
@@ -41,47 +46,55 @@ const Header = () => {
           </div>
 
           {/* Navigation */}
-          <nav className="navigation">
+          <div className="navigation">
             <div className="search-box">
               <input type="text" placeholder="प्रोडक्ट खोज्नुहोस्" />
               <button>
                 <FaMagnifyingGlass size={18} />
               </button>
             </div>
+          </div>
 
-            
-          </nav>
-
-          {/* Icons + Search + Login */}
+          {/* Icons + Login Section */}
           <div className="icons">
-            {/* Search Box */}
-            {/* <div className="search-box">
-              <input type="text" placeholder="प्रोडक्ट खोज्नुहोस्" />
-              <button>
-                <FaMagnifyingGlass size={18} />
-              </button>
-            </div> */}
-
-            {/* Login/Register + Badges */}
             <div className="log-register">
               <ul>
+                {/* Login/Register */}
                 <li>
-                  <Link to="/login" className="nav-link">
-लगइन                  </Link>{" "}
-                  |{" "}
-                  <Link to="/register" className="nav-link">
-दर्ता गर्नुहोस्                  </Link>
-                </li>
+                  {isLogin ? (
+                    <Link to="/profile" className="nav-link">
+                      प्रोफाइल
+                    </Link>
+                  ) : (
+                    // <div className="profile-menu">
+                    //   <button className="profile-icon-btn">
+                    //     <img
+                    //       src={manoj}
+                    //       alt="profile"
+                    //       className="profile-icon-img"
+                    //     />
+                    //   </button>
+                    // </div>
+                    <div className="profile-drop">
+                      <div className="drop-header">
+                        <div className="img-div">
+                           <img
+                          src={manoj}
+                          alt="profile"
+                          className="dropdown-avatar"
+                        />
 
-                {/* Cart */}
-                <li>
-                  <Tooltip title="Cart">
-                    <Stack spacing={2} direction="row" alignItems="center">
-                      <Badge color="secondary" badgeContent={2} showZero>
-                        <FiShoppingCart size={24} />
-                      </Badge>
-                    </Stack>
-                  </Tooltip>
+
+
+                        </div>
+                       
+                        <div className="user-info">
+                          <h4>Manoj Katuwal</h4>
+                          <p>katwalmanoj67@gmail.com</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </li>
 
                 {/* Compare */}
@@ -95,12 +108,23 @@ const Header = () => {
                   </Tooltip>
                 </li>
 
-                {/* Wishlist / Heart */}
+                {/* Wishlist */}
                 <li>
                   <Tooltip title="Wishlist">
                     <Stack spacing={2} direction="row" alignItems="center">
                       <Badge color="secondary" badgeContent={5} showZero>
                         <CiHeart size={24} />
+                      </Badge>
+                    </Stack>
+                  </Tooltip>
+                </li>
+
+                {/* Cart */}
+                <li onClick={toggleDrawer}>
+                  <Tooltip title="Cart">
+                    <Stack spacing={2} direction="row" alignItems="center">
+                      <Badge color="secondary" badgeContent={2} showZero>
+                        <FiShoppingCart size={24} />
                       </Badge>
                     </Stack>
                   </Tooltip>

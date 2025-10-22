@@ -204,3 +204,15 @@ gap: 15px;
   height: 100%;
   object-fit: contain;
 }
+
+.password-filed{
+  position: relative;
+}
+
+.eye-off-on{
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  cursor: pointer;
+  font-size: 20px;
+}

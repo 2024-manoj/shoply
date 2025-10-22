@@ -11,7 +11,13 @@ import ContextProvider from "./ContextProvider/ContextProvider";
 import ProductDialog from "./Components/ProductDialog/ProductDialog";
 // import { Login } from "@mui/icons-material";
 // import { Dialog } from "@mui/material";
-import Login from './Pages/Login/Login'
+import Login from "./Pages/Login/Login";
+import Cart from "./Components/Cart/Cart";
+import CartSpecifi from "./Components/CartSpecifi/CartSpecifi";
+// import { Checkbox } from "@mui/material";
+import Checkout from "./Components/Checkout/Checkout";
+import Verify from "./Components/Verify/Verify";
+import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
 function App() {
   return (
     <>
@@ -21,10 +27,16 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/fashion" element={<Fashion />} />
           <Route path="/product/:productId" element={<ProductDetails />} />
-          <Route path="/login" element={<Login/>}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/cart" element={<CartSpecifi />}></Route>
+          <Route path="/checkout" element={<Checkout />}/>
+          <Route path="/verify" element={<Verify/>} />
+          <Route  path="/forgot-password" element={<ForgotPassword/>}/>
         </Routes>
+
         {/* <Features /> */}
-        < ProductDialog />
+        <Cart />
+        <ProductDialog />
         <Features />
       </ContextProvider>
     </>
