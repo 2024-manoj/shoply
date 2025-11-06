@@ -5,7 +5,7 @@ const ContextProvider = ({ children }) => {
   const [dialogState, setDialogState] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [cartDrawer,setCartDrawer] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   const dialogOpen = (product)=> {
     setSelectedProduct(product);
     setDialogState(true);

@@ -18,6 +18,12 @@ import CartSpecifi from "./Components/CartSpecifi/CartSpecifi";
 import Checkout from "./Components/Checkout/Checkout";
 import Verify from "./Components/Verify/Verify";
 import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
+import MyAccount from "./Pages/MyAccount/MyAccount";
+// import CartItems from "./Components/CartItems/CartItems";
+// import CartItems from './Components/CartItems/CartItems';
+// import CartItems from './Components/CartItems/CartItems';
+// import Carts from "./Components/Carts/Carts";
+import Carts from "./Components/Carts/Carts";
 function App() {
   return (
     <>
@@ -29,13 +35,19 @@ function App() {
           <Route path="/product/:productId" element={<ProductDetails />} />
           <Route path="/login" element={<Login />}></Route>
           <Route path="/cart" element={<CartSpecifi />}></Route>
-          <Route path="/checkout" element={<Checkout />}/>
-          <Route path="/verify" element={<Verify/>} />
-          <Route  path="/forgot-password" element={<ForgotPassword/>}/>
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/verify" element={<Verify />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/profile" element={<MyAccount />} />
+          {/* <Route path="/all-items" element={<CartItems/>} /> */}
+          <Route path="/my-list" element={<Carts/>}></Route>
+          
+          
         </Routes>
 
         {/* <Features /> */}
         <Cart />
+        {/* <Carts/> */}
         <ProductDialog />
         <Features />
       </ContextProvider>

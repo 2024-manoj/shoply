@@ -1,19 +1,34 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { FaMagnifyingGlass } from "react-icons/fa6";
+import { FaUserCircle } from "react-icons/fa";
 import Stack from "@mui/material/Stack";
 import Badge from "@mui/material/Badge";
 import { FiShoppingCart } from "react-icons/fi";
 import { IoGitCompareOutline } from "react-icons/io5";
-import { CiHeart } from "react-icons/ci";
+import { CiHeart, CiUser } from "react-icons/ci";
 import Tooltip from "@mui/material/Tooltip";
+import { MdOutlineAccountCircle } from "react-icons/md";
+import { LuLogOut } from "react-icons/lu";
 import { useDialog } from "../../ContextProvider/ContextProvider";
-import { FaUserCircle } from "react-icons/fa";
 import manoj from "../../assets/images/manoj.jpg";
 
 const Header = () => {
   const { toggleDrawer, isLogin, setIsLogin } = useDialog();
+  const [openProfileMenu, setOpenProfileMenu] = useState(false);
+  const menuRef = useRef(null);
+
+  // ✅ Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setOpenProfileMenu(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <header>
@@ -59,41 +74,96 @@ const Header = () => {
           <div className="icons">
             <div className="log-register">
               <ul>
-                {/* Login/Register */}
-                <li>
+                {/* Profile / Login */}
+                <li className="profile-container" ref={menuRef}>
                   {isLogin ? (
-                    <Link to="/profile" className="nav-link">
-                      प्रोफाइल
-                    </Link>
-                  ) : (
-                    // <div className="profile-menu">
-                    //   <button className="profile-icon-btn">
-                    //     <img
-                    //       src={manoj}
-                    //       alt="profile"
-                    //       className="profile-icon-img"
-                    //     />
-                    //   </button>
-                    // </div>
-                    <div className="profile-drop">
-                      <div className="drop-header">
-                        <div className="img-div">
-                           <img
-                          src={manoj}
-                          alt="profile"
-                          className="dropdown-avatar"
-                        />
-
-
-
+                    <div className="profile-wrapper">
+                      <div
+                        className="profile-trigger"
+                        onClick={() => setOpenProfileMenu(!openProfileMenu)}
+                      >
+                        <div className="profile-avatar">
+                          <img src={manoj} alt="profile" />
                         </div>
-                       
-                        <div className="user-info">
-                          <h4>Manoj Katuwal</h4>
+                        <div className="profile-info">
+                          <h4>Manoj Katwal</h4>
                           <p>katwalmanoj67@gmail.com</p>
                         </div>
                       </div>
+
+                      {/* Dropdown Menu */}
+                      {openProfileMenu && (
+                        <div className="profile-dropdown-menu">
+                          <Link
+                            to="/profile"
+                            style={{
+                              textDecoration: "none",
+                              color: "inherit",
+                            }}
+                            onClick={() => setOpenProfileMenu(false)} // ✅ closes when clicked
+                          >
+                            <div className="dropdown-header">
+                              <CiUser className="header-icon" />
+                              <h3>Profile</h3>
+                            </div>
+                          </Link>
+                          <Link
+                            to="/my-list"
+                            style={{
+                              textDecoration: "none",
+                              color: "inherit",
+                            }}
+                          >
+                            <div
+                              className="dropdown-item"
+                              onClick={() => setOpenProfileMenu(false)} // ✅ close on click
+                            >
+                              <MdOutlineAccountCircle className="item-icon" />
+                              {/* <Link to='/my-list' style={{ textDecoration: "none", color: "inherit" }}> */}
+
+                              <span>My List</span>
+                              {/* </Link> */}
+                            </div>
+                          </Link>
+
+                          <div className="dropdown-items">
+                            <div
+                              className="dropdown-item"
+                              onClick={() => setOpenProfileMenu(false)} // ✅ close on click
+                            >
+                              <MdOutlineAccountCircle className="item-icon" />
+                              <Link
+                                to="/my-account"
+                                style={{
+                                  textDecoration: "none",
+                                  color: "inherit",
+                                }}
+                              >
+                                <span>My Orders</span>
+                              </Link>
+                            </div>
+
+                            <div className="dropdown-divider"></div>
+
+                            <div
+                              className="dropdown-item logout-item"
+                              onClick={() => {
+                                setIsLogin(false);
+                                setOpenProfileMenu(false);
+                              }}
+                            >
+                              <LuLogOut className="item-icon" />
+                              <span>Log out</span>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
+                  ) : (
+                    <Link to="/login" className="login-link">
+                      <FaUserCircle size={20} />
+                      <span>लगइन / दर्ता</span>
+                    </Link>
                   )}
                 </li>
 

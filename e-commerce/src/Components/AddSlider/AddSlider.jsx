@@ -58,7 +58,7 @@ const AddSlider = () => {
         </div>
 
         <button className="arrowww left" onClick={prevSlide}><FaChevronLeft /></button>
-        <button className="arrows right" onClick={nextSlide}><FaChevronRight /></button>
+        <button className="arrowww right" onClick={nextSlide}><FaChevronRight /></button>
       </div>
 
       {/* Right stacked ads */}
