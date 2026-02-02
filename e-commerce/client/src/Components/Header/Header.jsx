@@ -133,7 +133,7 @@ const Header = () => {
                             >
                               <MdOutlineAccountCircle className="item-icon" />
                               <Link
-                                to="/my-account"
+                                to="/my-order"
                                 style={{
                                   textDecoration: "none",
                                   color: "inherit",

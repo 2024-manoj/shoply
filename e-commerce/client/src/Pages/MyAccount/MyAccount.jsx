@@ -48,7 +48,7 @@ function MyAccount() {
               <FaHeart /> My List
             </li>
             </NavLink>
-            <NavLink to='/my-orders' style={{textDecoration: 'none', color: 'inherit'}} className="sidebar-link">
+            <NavLink to='/my-order' style={{textDecoration: 'none', color: 'inherit'}} className="sidebar-link">
             <li>
               <FaShoppingBag /> My Orders
             </li>

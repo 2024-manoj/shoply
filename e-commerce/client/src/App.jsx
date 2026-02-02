@@ -24,6 +24,7 @@ import MyAccount from "./Pages/MyAccount/MyAccount";
 // import CartItems from './Components/CartItems/CartItems';
 // import Carts from "./Components/Carts/Carts";
 import Carts from "./Components/Carts/Carts";
+import MyOrder from './Components/myorder/MyOrder'
 function App() {
   return (
     <>
@@ -41,6 +42,7 @@ function App() {
           <Route path="/profile" element={<MyAccount />} />
           {/* <Route path="/all-items" element={<CartItems/>} /> */}
           <Route path="/my-list" element={<Carts/>}></Route>
+          <Route path='/my-order' element={<MyOrder/>}></Route>
           
           
         </Routes>
